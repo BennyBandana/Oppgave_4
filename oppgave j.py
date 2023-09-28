@@ -1,11 +1,11 @@
-def beregn_diff(liste):
+def beregn(liste):
     diff = []
 
-    for i in range(len(liste) - 1):
-        diff1 = liste[i + 1] - liste[i]
+    for t in range(len(liste) - 1):
+        diff1 = liste[t + 1] - liste[t]
         diff.append(diff1)
 
-    return differanser
+    return diff
 
 def finn_trend(diff_liste):
     for indeks, diff in enumerate(diff_liste):
@@ -17,6 +17,6 @@ def finn_trend(diff_liste):
             print(f"Tidspunkt {indeks}: Uforandret")
 
 liste_input = [1, 3, 6, 10, 15]
-differanser = beregn_diff(liste_input)
+differanser = beregn(liste_input)
 print(differanser)
 finn_trend(differanser)
