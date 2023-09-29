@@ -1,8 +1,8 @@
 def beregn_diff(liste):
     differanser = []
 
-    for i in range(len(liste) - 1):
-        diff = liste[i + 1] - liste[i]
+    for num in range(len(liste) - 1):
+        diff = liste[i + 1] - liste[num]
         differanser.append(diff)
 
     return differanser
