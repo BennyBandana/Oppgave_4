@@ -1,0 +1,26 @@
+def finn_lengste_null_sekvens(liste):
+    maks_lengde = 0
+    nåværende_lengde = 0
+    start_indeks = -1
+
+    for indeks, num in enumerate(liste):
+        if num == 0:
+            nåværende_lengde += 1
+            if nåværende_lengde == 1:
+                nåværende_start_indeks = indeks
+            if nåværende_lengde > maks_lengde:
+                maks_lengde = nåværende_lengde
+                start_indeks = nåværende_start_indeks
+        else:
+            nåværende_lengde = 0
+
+    return maks_lengde, liste[start_indeks:start_indeks + maks_lengde]
+
+input_string = input("Skriv inn en liste med tall (-bruk komma mellom tall.): ")
+liste_med_tall = [int(x) for x in input_string.split(",")]
+
+lengde, sekvens = finn_lengste_null_sekvens(liste_med_tall)
+if lengde:
+    print(f"Lengden på den lengste sekvensen av nuller er {lengde}, og sekvensen er {sekvens}")
+else:
+    print("Ingen nuller ble funnet i listen.")
